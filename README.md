@@ -1,5 +1,7 @@
 # Rouyan coffee ordering interface
 
+Rouyan is a warm, modern coffee shop ordering experience for browsing a seasonal menu, filtering items by category, and building a lightweight local cart. The static prototype also includes responsive pages for the shop story, contact form, account login, and signup flow.
+
 Open `index.html` in a browser. The pages use Tailwind’s CDN for a zero-build static prototype; shared presentation and behavior live in `assets/site.css`, `assets/site.js`, and `assets/components.js`.
 
 ## Data and templating
