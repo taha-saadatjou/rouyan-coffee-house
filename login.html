@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Log in | Rouyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body>
+    <div class="grain"></div>
+    <script src="assets/components.js"></script>
+    <script>shell()</script>
+    <main class="grid min-h-[calc(100vh-73px)] lg:grid-cols-2">
+        <section class="hidden overflow-hidden bg-[#211913] p-12 text-white lg:block">
+            <p class="text-sm uppercase tracking-[.2em] text-[#e9b384]">Welcome back</p>
+            <h1 class="display mt-4 max-w-md text-6xl">Your daily ritual is waiting.</h1><img
+                class="mt-14 h-72 w-full rounded-[2rem] object-cover opacity-80"
+                src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85"
+                alt="Coffee being made">
+        </section>
+        <section class="flex items-center justify-center bg-[#f8f3ea] p-5">
+            <div class="w-full max-w-md rounded-[2rem] bg-[#fffdf8] p-7 shadow-xl sm:p-10">
+                <p class="text-xs font-bold uppercase tracking-[.2em] text-[#c97846]">Account</p>
+                <h1 class="display mt-2 text-4xl">Welcome back</h1>
+                <form id="loginForm" class="mt-7" novalidate>
+                    <div class="form-content"><label class="block text-sm font-bold">Email address<input
+                                class="field mt-2" name="email" type="email" required
+                                autocomplete="email"></label><label class="mt-5 block text-sm font-bold">Password<input
+                                class="field mt-2" name="password" type="password" required
+                                autocomplete="current-password"></label>
+                        <div class="mt-4 flex items-center justify-between text-sm"><label
+                                class="flex items-center gap-2"><input type="checkbox"> Remember me</label><a
+                                class="font-bold text-[#c97846]" href="#">Forgot password?</a></div><button
+                            class="btn mt-7 w-full bg-[#211913] text-white">Log in <span>→</span></button>
+                    </div>
+                    <div class="form-success hidden py-8 text-center">
+                        <div class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#dcebdd] text-2xl">✓
+                        </div>
+                        <p class="display mt-4 text-2xl">Welcome in.</p>
+                    </div>
+                </form>
+                <p class="mt-6 text-center text-sm text-stone-600">New here? <a class="font-bold text-[#c97846]"
+                        href="signup.html">Create an account</a></p>
+            </div>
+        </section>
+    </main>
+    <script>end()</script>
+    <script src="assets/site.js"></script>
+    <script>initForm(document.querySelector('#loginForm'))</script>
+</body>
+
+</html>

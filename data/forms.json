@@ -1,0 +1,4 @@
+{
+  "contact": [{"name":"name","label":"Your name","type":"text","required":true},{"name":"email","label":"Email address","type":"email","required":true},{"name":"message","label":"How can we help?","type":"textarea","required":true}],
+  "signup": [{"name":"name","label":"Full name","type":"text","required":true},{"name":"email","label":"Email address","type":"email","required":true},{"name":"password","label":"Password","type":"password","required":true},{"name":"confirmPassword","label":"Confirm password","type":"password","required":true}]
+}

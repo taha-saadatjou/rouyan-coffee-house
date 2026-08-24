@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact | Rouyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body>
+    <div class="grain"></div>
+    <script src="assets/components.js"></script>
+    <script>shell('contact')</script>
+    <main class="mx-auto max-w-7xl px-5 py-14">
+        <div class="reveal max-w-2xl">
+            <p class="text-xs font-bold uppercase tracking-[.22em] text-[#c97846]">Say hello</p>
+            <h1 class="display mt-3 text-5xl">Come find us.</h1>
+            <p class="mt-4 text-lg text-stone-600">Questions, kind words or catering plans — we’d love to hear from you.
+            </p>
+        </div>
+        <div class="mt-12 grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
+            <form id="contactForm"
+                class="reveal rounded-[2rem] bg-[#fffdf8] p-7 shadow-[0_12px_34px_rgba(72,41,23,.1)] sm:p-10"
+                novalidate>
+                <div class="form-content">
+                    <div class="grid gap-5 sm:grid-cols-2"><label class="text-sm font-bold">Your name<input
+                                class="field mt-2" name="name" required autocomplete="name"></label><label
+                            class="text-sm font-bold">Email address<input class="field mt-2" name="email" type="email"
+                                required autocomplete="email"></label></div><label
+                        class="mt-5 block text-sm font-bold">How can we help?<textarea
+                            class="field mt-2 min-h-32 resize-y" name="message" required></textarea></label>
+                    <p class="mt-3 text-xs text-stone-500">Please complete all fields with a valid email.</p><button
+                        class="btn mt-6 bg-[#211913] text-white">Send message <span>→</span></button>
+                </div>
+                <div class="form-success hidden py-12 text-center">
+                    <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[#dcebdd] text-3xl">✓</div>
+                    <h2 class="display mt-5 text-3xl">Message sent.</h2>
+                    <p class="mt-2 text-stone-600">We’ll be in touch soon.</p>
+                </div>
+            </form>
+            <div class="reveal">
+                <div class="relative h-64 overflow-hidden rounded-[2rem] bg-[#d8ded1] p-7">
+                    <div class="absolute inset-0 opacity-25"
+                        style="background-image:linear-gradient(30deg,transparent 48%,#78947e 49%,#78947e 51%,transparent 52%),linear-gradient(120deg,transparent 48%,#c97846 49%,#c97846 51%,transparent 52%);background-size:90px 70px">
+                    </div>
+                    <div class="relative rounded-2xl bg-white/85 p-4 shadow-lg backdrop-blur">
+                        <p class="font-bold">Rouyan coffee house</p>
+                        <p class="text-sm text-stone-600">14 Linden Street, Old Town</p>
+                    </div>
+                </div>
+                <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <h2 class="font-bold">Hours</h2>
+                        <p class="mt-2 text-sm leading-6 text-stone-600">Mon–Fri: 7am–6pm<br>Sat–Sun: 8am–5pm</p>
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Keep in touch</h2><a
+                            class="mt-2 block text-sm text-[#c97846] hover:underline"
+                            href="mailto:hello@rouyan.coffee">hello@rouyan.coffee</a>
+                        <div class="mt-3 flex gap-3"><a
+                                class="rounded-full bg-white px-3 py-2 text-sm shadow-sm transition hover:-translate-y-1"
+                                href="#" aria-label="Instagram">Instagram</a><a
+                                class="rounded-full bg-white px-3 py-2 text-sm shadow-sm transition hover:-translate-y-1"
+                                href="#" aria-label="TikTok">TikTok</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>end()</script>
+    <script src="assets/site.js"></script>
+    <script>initForm(document.querySelector('#contactForm'))</script>
+</body>
+
+</html>

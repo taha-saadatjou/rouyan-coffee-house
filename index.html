@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rouyan | Order coffee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body>
+  <div class="grain"></div>
+  <script src="assets/components.js"></script>
+  <script>shell('home')</script>
+  <main>
+    <section class="relative overflow-hidden px-5 pb-16 pt-14">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_10%,#f5d8b7,transparent_25%),radial-gradient(circle_at_15%_50%,#e8e7d5,transparent_30%)]">
+      </div>
+      <div class="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
+        <div class="reveal">
+          <p class="mb-4 text-xs font-bold uppercase tracking-[.24em] text-[#c97846]">Rituals, roasted daily</p>
+          <h1 class="display max-w-xl text-5xl leading-[.98] sm:text-7xl">Good days begin <i>slowly.</i></h1>
+          <p class="mt-6 max-w-lg text-lg leading-relaxed text-stone-600">Thoughtfully roasted coffee and all-day food,
+            made for your small moments of pause.</p><a class="btn mt-8 bg-[#211913] text-white" href="#menu">Explore
+            the menu →</a>
+        </div>
+        <div class="reveal relative mx-auto h-[360px] w-[360px] sm:h-[460px] sm:w-[460px]">
+          <div class="hero-orb absolute inset-8 rounded-full"></div><img
+            class="absolute bottom-2 left-3 h-64 w-64 rotate-[-12deg] rounded-[2rem] object-cover shadow-2xl sm:h-80 sm:w-80"
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85"
+            alt="Latte art in a ceramic cup">
+          <div
+            class="absolute right-0 top-10 rounded-2xl border border-white/60 bg-white/70 p-4 shadow-lg backdrop-blur">
+            <p class="text-xs text-stone-500">Today’s pour</p>
+            <p class="font-bold">Ethiopia Guji</p>
+            <p class="text-sm text-[#c97846]">Berry · florals · cacao</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="menu" class="mx-auto max-w-7xl px-5 py-14">
+      <div class="reveal flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-[#c97846]">Choose your ritual</p>
+          <h2 class="display mt-2 text-4xl">The menu</h2>
+        </div>
+        <div id="filters" class="flex gap-2 overflow-auto pb-1" aria-label="Menu categories"></div>
+      </div>
+      <div id="menuGrid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+    </section>
+    <section class="mx-auto max-w-7xl px-5 py-10">
+      <div class="reveal overflow-hidden rounded-[2rem] bg-[#78947e] p-8 text-white md:p-14">
+        <p class="text-sm font-bold uppercase tracking-[.2em] text-[#e6eedf]">Made with care</p>
+        <div class="mt-4 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <h2 class="display max-w-xl text-4xl">Seasonal ingredients, considered from farm to first sip.</h2><a
+            href="about.html" class="btn bg-white text-[#211913]">Meet Rouyan.</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>end()</script>
+  <script src="data/menu.js"></script>
+  <script src="assets/site.js"></script>
+  <script>
+    const data = window.MENU_DATA; const grid = document.querySelector('#menuGrid'), filters = document.querySelector('#filters');
+    filters.innerHTML = ['All', ...data.categories].map((c, i) => `<button data-category="${c}" class="filter rounded-full ${i ? 'border border-stone-300' : 'bg-[#211913] text-white'} px-4 py-2 text-sm font-bold">${c}</button>`).join('');
+    function draw(category = 'All') {const results = data.items.filter(item => category === 'All' || item.category === category); grid.innerHTML = results.length ? results.map(item => `<article class="card-3d overflow-hidden rounded-3xl bg-[#fffdf8] shadow-[0_8px_24px_rgba(68,38,18,.08)]"><img class="h-52 w-full object-cover" src="${item.image}" alt="${item.name}"><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs font-bold uppercase tracking-wider text-[#c97846]">${item.category}</p><h3 class="display mt-1 text-2xl">${item.name}</h3></div><b>${money(item.price)}</b></div><p class="mt-2 text-sm leading-relaxed text-stone-600">${item.description}</p><div class="mt-4 flex items-center justify-between"><span class="text-xs text-stone-500">${item.options.sizes.length ? 'Size & milk options' : 'Made fresh'}</span><button class="add btn bg-[#211913] px-4 py-2 text-sm text-white" data-id="${item.id}">Add +</button></div></div></article>`).join('') : '<p class="col-span-full rounded-3xl bg-white p-10 text-center text-stone-500">Nothing is available here today. Please try another category.</p>'; document.querySelectorAll('.add').forEach(button => button.addEventListener('click', () => add(data.items.find(item => item.id === button.dataset.id))));}
+    filters.addEventListener('click', event => {const category = event.target.dataset.category; if (!category) return; document.querySelectorAll('.filter').forEach(button => button.className = 'filter rounded-full border border-stone-300 px-4 py-2 text-sm font-bold'); event.target.className = 'filter rounded-full bg-[#211913] px-4 py-2 text-sm font-bold text-white'; draw(category)}); draw();
+  </script>
+</body>
+
+</html>
